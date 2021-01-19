@@ -1,0 +1,84 @@
+PROCEDURE dot_product(v1,v2:arr)
+VAR 
+   v1,v2: ARRAY_OF:INTEGER[10] 
+   i,j:INTEGER=0
+    ps:= 0;  
+BEGIN
+FOR i FROM 0 TO v1.length-1 DO
+FOR j FROM 0 TO v2.length-2 DO
+  ps:= ps + v1[i] * v2[j]
+END
+
+ALGORITHM procedure 
+VAR 
+    v1,v2: ARRAY_OF:INTEGER[10] 
+    i,j:INTEGER=0
+    m,n:INTEGER
+BEGIN
+ REPEAT
+     write('n non null')
+     Read(n)
+ UNTIL (n > 0)
+     FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        v1[i] := n
+    END_FOR
+    REPEAT
+     write('m non null')
+     Read(m)
+ UNTIL (m > 0)
+     FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        v1[i] := m
+    END_FOR
+    dot_product(v1[i],v2[j])
+
+ IF (ps = 0) Then
+ write('v1 et v2 sont orth')
+ ELSE
+ write
+ ('v1 et v2 ne sont pas orth')
+
+
+
+FUNCTION dot_product(v1,v2:arr) : return_INTEGER
+VAR
+    v1, v2: ARRAY_OF:INTEGER
+    i,j,vecto:INTEGER
+BEGIN
+    FOR i FROM 0 TO v1.length-1 DO
+    FOR j FROM 0 TO v2.length-1 DO
+    vecto := vecto + v1[i]*v2[j]
+
+
+    
+    RETURN vecto ;
+END
+
+ALGORITHM func
+VAR 
+    v1,v2: ARRAY_OF:INTEGER[10] 
+    i,j:INTEGER=0
+    m,n:INTEGER
+    appfunc:INTEGER
+BEGIN
+ REPEAT
+     write('n non null')
+     Read(n)
+ UNTIL (n > 0)
+     FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        v1[i] := n
+    END_FOR
+    REPEAT
+     write('m non null')
+     Read(m)
+ UNTIL (m > 0)
+     FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        v1[i] := m
+    END_FOR
+    appfunc:= dot_product(v1[i]*v2[j])
+    Read(appfunc)
+    if (appfunc = 0)
+      write('v1 et v2 sont orth')
+    ELSE
+      write('v1 et v2 ne sont pas orth')
+
+
